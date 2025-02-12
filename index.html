@@ -7,85 +7,198 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
         }
+
         header {
-            background-color: #0044cc;
+            background-color: #2c3e50; /* Cor de fundo mais sóbria */
             color: white;
             padding: 20px 0;
             text-align: center;
         }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e; /* Cor de fundo do menu */
+            padding: 10px 0;
         }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c; /* Cor de destaque para hover */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         h1 {
             margin: 0;
+            color: #2c3e50;
         }
+
         p {
             font-size: 1.1em;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
+
         .projetos {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
+            margin-top: 20px;
         }
+
         .projeto {
-            background: white;
-            padding: 15px;
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
+        .projeto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
         .projeto h2 {
-            color: #0044cc;
-            margin-bottom: 10px;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
+
         .projeto p {
             font-size: 1em;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #7f8c8d;
         }
+
         .projeto a {
             text-decoration: none;
-            color: #0044cc;
+            color: #1abc9c; /* Cor de destaque dos links */
             font-weight: bold;
-            border: 2px solid #0044cc;
-            padding: 8px 16px;
+            border: 2px solid #1abc9c;
+            padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
+
         .projeto a:hover {
-            background-color: #0044cc;
+            background-color: #1abc9c;
             color: white;
         }
+
         footer {
-            background-color: #333;
+            background-color: #34495e;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
             margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Estilos para a seção Sobre Mim */
+        .sobre-mim {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .sobre-mim h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sobre-mim p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        /* Estilo para a seção Contatos */
+        .contatos {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contatos a {
+            color: #1abc9c; /* Cor de destaque para os links */
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contatos a:hover {
+            color: #2c3e50; /* Cor do link ao passar o mouse */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Meu Portfólio</h1>
-        <p>Olá! Meu nome é Pablo H. Kaipers e aqui estão alguns dos meus projetos.</p>
-    </header>
 
-    <div class="container">
+<header>
+    <h1>Meu Portfólio</h1>
+    <p>Olá! Meu nome é Pablo H. Kaipers e aqui estão alguns dos meus projetos.</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showTab('sobre-mim')">Sobre Mim</a>
+    <a href="#" onclick="showTab('projetos')">Projetos</a>
+    <a href="#" onclick="showTab('contatos')">Contatos</a>
+</nav>
+
+<div class="container">
+    <!-- Seção Sobre Mim -->
+    <section id="sobre-mim" class="tab-content">
+        <h2>Sobre Mim</h2>
+        <p>Sou desenvolvedor iniciante, mas com grande interesse por tecnologia e inovação. Tenho experiência de 4 anos trabalhando com PCP (Planejamento e Controle de Produção), onde adquiri habilidades em organização, gestão de processos e resolução de problemas. Embora seja novo na área de desenvolvimento, estou constantemente aprendendo e aplicando novas ferramentas e linguagens de programação para aprimorar meus projetos. Acredito que minha experiência em PCP me permite trazer uma visão estratégica e analítica para a programação e desenvolvimento de soluções eficientes.</p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="tab-content">
         <div class="projetos">
             <div class="projeto">
                 <h2>Projeto Boss</h2>
                 <p>Projeto onde criei um código para classificar nível de experiência para cada nível de classe em um jogo...</p>
                 <a href="https://github.com/PabloKaipers/Projeto-Boss.git">Ver no GitHub</a>
             </div>
-            
+
             <div class="projeto">
                 <h2>Calculadora de Partidas Rankeadas</h2>
                 <p>Calculadora para partidas ranqueadas para ver qual rank você estaria caso tivesse quantidades de v/d.</p>
@@ -110,10 +223,40 @@
                 <a href="https://github.com/PabloKaipers/git.test.git">Ver no GitHub</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Pablo H. Kaipers - Todos os direitos reservados.</p>
-    </footer>
+    <!-- Seção Contatos -->
+    <section id="contatos" class="tab-content">
+        <h2>Contatos</h2>
+        <a href="https://wa.me/49998314628" target="_blank">WhatsApp: 49998314628</a>
+        <br>
+        <a href="https://www.linkedin.com/in/pablo-henrique-460490164/" target="_blank">LinkedIn: Pablo H. Kaipers</a>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Pablo H. Kaipers - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Função para mostrar a aba selecionada
+    function showTab(tabId) {
+        // Esconde todas as seções
+        const sections = document.querySelectorAll('.tab-content');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Exibe a seção clicada
+        const activeTab = document.getElementById(tabId);
+        activeTab.classList.add('active');
+    }
+
+    // Mostrar a seção "Sobre Mim" por padrão ao carregar a página
+    document.addEventListener('DOMContentLoaded', function() {
+        showTab('sobre-mim');
+    });
+</script>
+
 </body>
 </html>
