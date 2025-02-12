@@ -5,46 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; background-color: #f5f5f5; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        h1 { color: #333; }
-        .projeto { background: white; padding: 10px; margin: 10px; border-radius: 5px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .projeto {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .projeto h2 {
+            color: #0044cc;
+            margin-bottom: 10px;
+        }
+        .projeto p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .projeto a {
+            text-decoration: none;
+            color: #0044cc;
+            font-weight: bold;
+            border: 2px solid #0044cc;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .projeto a:hover {
+            background-color: #0044cc;
+            color: white;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Meu Portfólio</h1>
         <p>Olá! Meu nome é Pablo H. Kaipers e aqui estão alguns dos meus projetos.</p>
-        
-        <div class="projeto">
-            <h2>Projeto Boss</h2>
-            <p>Projeto onde criei um codigo para classificar nivel de experiencia para cada nivel de classe em um jogo...</p>
-            <a href="https://github.com/PabloKaipers/Projeto-Boss.git">Ver no GitHub</a>
-        </div>
-        
-        <div class="projeto">
-            <h2>Calculadora de Partidas Rankeadas</h2>
-            <p>Calculadora para partida ranqueada para ver qual rank voce estaria caso tivesse quantidades de v/d </p>
-            <a href="https://github.com/PabloKaipers/-Calculadora-de-Partidas-Rankeadas.git">Ver no GitHub</a>
-        </div>
+    </header>
 
-        <div class="projeto">
-            <h2>Jogo do Heroi</h2>
-            <p>Codigo para definir classes e poder de cada uma, definindo tipos de ataques e defesas </p>
-            <a href="https://github.com/PabloKaipers/Jogo-Heroi.git">Ver no GitHub</a>
-        </div>
+    <div class="container">
+        <div class="projetos">
+            <div class="projeto">
+                <h2>Projeto Boss</h2>
+                <p>Projeto onde criei um código para classificar nível de experiência para cada nível de classe em um jogo...</p>
+                <a href="https://github.com/PabloKaipers/Projeto-Boss.git">Ver no GitHub</a>
+            </div>
+            
+            <div class="projeto">
+                <h2>Calculadora de Partidas Rankeadas</h2>
+                <p>Calculadora para partidas ranqueadas para ver qual rank você estaria caso tivesse quantidades de v/d.</p>
+                <a href="https://github.com/PabloKaipers/-Calculadora-de-Partidas-Rankeadas.git">Ver no GitHub</a>
+            </div>
 
-        <div class="projeto">
-            <h2>Pokedev</h2>
-            <p>Pagina na web que mostra pokemons genericos e suas descriçoes </p>
-            <a href="https://github.com/PabloKaipers/Pokedev.git">Ver no GitHub</a>
-        </div>
+            <div class="projeto">
+                <h2>Jogo do Herói</h2>
+                <p>Código para definir classes e poder de cada uma, definindo tipos de ataques e defesas.</p>
+                <a href="https://github.com/PabloKaipers/Jogo-Heroi.git">Ver no GitHub</a>
+            </div>
 
-        <div class="projeto">
-            <h2>Gerador de Qr code </h2>
-            <p>Gerador para qualquer coisa, seja links ou textos </p>
-            <a href="https://github.com/PabloKaipers/git.test.git">Ver no GitHub</a>
+            <div class="projeto">
+                <h2>Pokedev</h2>
+                <p>Página na web que mostra Pokémon genéricos e suas descrições.</p>
+                <a href="https://github.com/PabloKaipers/Pokedev.git">Ver no GitHub</a>
+            </div>
+
+            <div class="projeto">
+                <h2>Gerador de Qr Code</h2>
+                <p>Gerador para qualquer coisa, seja links ou textos.</p>
+                <a href="https://github.com/PabloKaipers/git.test.git">Ver no GitHub</a>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Pablo H. Kaipers - Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
