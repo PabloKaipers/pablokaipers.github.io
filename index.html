@@ -14,7 +14,7 @@
         }
 
         header {
-            background-color: #2c3e50; /* Cor de fundo mais sóbria */
+            background-color: #2c3e50;
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -23,7 +23,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #34495e; /* Cor de fundo do menu */
+            background-color: #34495e;
             padding: 10px 0;
         }
 
@@ -38,7 +38,7 @@
         }
 
         nav a:hover {
-            background-color: #1abc9c; /* Cor de destaque para hover */
+            background-color: #1abc9c;
         }
 
         .container {
@@ -66,9 +66,9 @@
         }
 
         .projetos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             margin-top: 20px;
         }
 
@@ -78,6 +78,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 30%;
+            min-width: 300px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -99,7 +101,7 @@
 
         .projeto a {
             text-decoration: none;
-            color: #1abc9c; /* Cor de destaque dos links */
+            color: #1abc9c;
             font-weight: bold;
             border: 2px solid #1abc9c;
             padding: 10px 20px;
@@ -123,51 +125,6 @@
         footer p {
             font-size: 0.9em;
         }
-
-        /* Estilos para a seção Sobre Mim */
-        .sobre-mim {
-            background-color: #fff;
-            padding: 40px;
-            margin-top: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .sobre-mim h2 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sobre-mim p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #7f8c8d;
-            text-align: center;
-        }
-
-        /* Estilo para a seção Contatos */
-        .contatos {
-            background-color: #fff;
-            padding: 40px;
-            margin-top: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .contatos a {
-            color: #1abc9c; /* Cor de destaque para os links */
-            font-weight: bold;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .contatos a:hover {
-            color: #2c3e50; /* Cor do link ao passar o mouse */
-        }
     </style>
 </head>
 <body>
@@ -178,20 +135,13 @@
 </header>
 
 <nav>
-    <a href="#" onclick="showTab('sobre-mim')">Sobre Mim</a>
-    <a href="#" onclick="showTab('projetos')">Projetos</a>
-    <a href="#" onclick="showTab('contatos')">Contatos</a>
+    <a href="#">Sobre Mim</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contatos</a>
 </nav>
 
 <div class="container">
-    <!-- Seção Sobre Mim -->
-    <section id="sobre-mim" class="tab-content">
-        <h2>Sobre Mim</h2>
-        <p>Sou desenvolvedor iniciante, mas com grande interesse por tecnologia e inovação. Tenho experiência de 4 anos trabalhando com PCP (Planejamento e Controle de Produção), onde adquiri habilidades em organização, gestão de processos e resolução de problemas. Embora seja novo na área de desenvolvimento, estou constantemente aprendendo e aplicando novas ferramentas e linguagens de programação para aprimorar meus projetos. Acredito que minha experiência em PCP me permite trazer uma visão estratégica e analítica para a programação e desenvolvimento de soluções eficientes.</p>
-    </section>
-
-    <!-- Seção Projetos -->
-    <section id="projetos" class="tab-content">
+    <section id="projetos">
         <div class="projetos">
             <div class="projeto">
                 <h2>Projeto Boss</h2>
@@ -221,48 +171,20 @@
                 <h2>Gerador de Qr Code</h2>
                 <p>Gerador para qualquer coisa, seja links ou textos.</p>
                 <a href="https://github.com/PabloKaipers/git.test.git">Ver no GitHub</a> 
-             </div>
+            </div>
 
             <div class="projeto">
                 <h2>Pesquisa de Satisfação</h2>
-                <p>Pesquisa de satisfação para feedback da empresa .</p>
+                <p>Pesquisa de satisfação para feedback da empresa.</p>
                 <a href="https://github.com/PabloKaipers/pesquisa-satisfacao.git">Ver no GitHub</a>
-                
-            
-    </section>
-
-    <!-- Seção Contatos -->
-    <section id="contatos" class="tab-content">
-        <h2>Contatos</h2>
-        <a href="https://wa.me/49998314628" target="_blank">WhatsApp: 49998314628</a>
-        <br>
-        <a href="https://www.linkedin.com/in/pablo-henrique-460490164/" target="_blank">LinkedIn: Pablo H. Kaipers</a>
+            </div>
+        </div>
     </section>
 </div>
 
 <footer>
     <p>&copy; 2025 Pablo H. Kaipers - Todos os direitos reservados.</p>
 </footer>
-
-<script>
-    // Função para mostrar a aba selecionada
-    function showTab(tabId) {
-        // Esconde todas as seções
-        const sections = document.querySelectorAll('.tab-content');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Exibe a seção clicada
-        const activeTab = document.getElementById(tabId);
-        activeTab.classList.add('active');
-    }
-
-    // Mostrar a seção "Sobre Mim" por padrão ao carregar a página
-    document.addEventListener('DOMContentLoaded', function() {
-        showTab('sobre-mim');
-    });
-</script>
 
 </body>
 </html>
